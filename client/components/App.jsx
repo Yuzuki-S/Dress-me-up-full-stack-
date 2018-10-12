@@ -24,7 +24,7 @@ const App = ({ auth }) => (
         <div className="hero-body has-text-centered">
           <Link to="/" className="">
             <h1 id="App_title" className="title is-1">
-              $how Me The Money
+              Dress Me Up
             </h1>
           </Link>
           <Nav />

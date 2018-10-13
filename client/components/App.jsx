@@ -7,6 +7,7 @@ import Register from "./Register";
 import Meeting from "./Meeting";
 import History from "./History";
 import Help from "./Help";
+import Sports from './Sports'
 
 const App = ({ auth }) => (
   <Router>
@@ -26,6 +27,7 @@ const App = ({ auth }) => (
         <Route path="/meeting" component={Meeting} />
         <Route path="/history" component={History} />
         <Route path="/about" component={Help} />
+        <Route path="/package/sports" component={Sports} />
       </div>
     </div>
   </Router>

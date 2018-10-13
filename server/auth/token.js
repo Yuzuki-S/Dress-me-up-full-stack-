@@ -4,7 +4,7 @@ var verifyJwt = require('express-jwt')
 var {compare} = require('./hash')
 
 function issue (req, res) {
-  getUserByName(req.body.user_name, req.app.get('db'))
+  getUserByName(req.body.email, req.app.get('db'))
     .then(user => {
       if (!user) return res.status(403).json({message: 'User does not exist'})
       compare(req.body.password, user.hash, (err, match) => {
@@ -24,7 +24,7 @@ function issue (req, res) {
 function createToken (user, secret) {
   return jwt.sign({
     user_id:user.user_id,
-    user_name: user.user_name
+    email: user.email
   }, secret, {
     expiresIn: '24h'
   })

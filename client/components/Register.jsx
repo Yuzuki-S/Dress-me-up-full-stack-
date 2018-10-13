@@ -7,12 +7,11 @@ class Register extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_name: "",
+     email: "",
       first_name: "",
       last_name: "",
       password: "",
-      confirm_password: "",
-      hourly_wage: ""
+      confirm_password: ""
     };
     this.updateDetails = this.updateDetails.bind(this);
     this.submit = this.submit.bind(this);
@@ -27,12 +26,11 @@ class Register extends React.Component {
     e.preventDefault();
     e.target.reset();
     let {
-      user_name,
+     email,
       password,
       confirm_password,
       first_name,
-      last_name,
-      hourly_wage
+      last_name
     } = this.state;
     console.log(this.state);
 
@@ -50,13 +48,13 @@ class Register extends React.Component {
           <span className="has-text-danger is-large">{auth.errorMessage}</span>
         )}
         <label className="column is-6 is-offset-one-quarter label is-large has-text-centered">
-          Username
+          Email
           <input
             required
             className="input is-large has-text-centered is-fullwidth"
-            placeholder="User Name"
+            placeholder="Email"
             type="text"
-            name="user_name"
+            name="email"
             onChange={this.updateDetails}
           />
         </label>
@@ -105,19 +103,6 @@ class Register extends React.Component {
               placeholder="Confirm Password"
               type="password"
               name="confirm_password"
-              onChange={this.updateDetails}
-            />
-          </label>
-        </div>
-        <div className="columns">
-          <label className="column is-6 is-offset-one-quarter label is-large has-text-centered">
-            Hourly Rate
-            <input
-              required
-              className="input is-large has-text-centered is-fullwidth"
-              placeholder="Hourly Rate"
-              type="number"
-              name="hourly_wage"
               onChange={this.updateDetails}
             />
           </label>

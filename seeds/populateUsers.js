@@ -10,11 +10,10 @@ exports.seed = function(knex, Promise) {
       return knex('users').insert([
         {
           id: 1,
-          user_name: 'symesharr',
+          email: 'symesharr',
           first_name: 'Harrison',
           last_name: 'Symes',
-          hash: hashSync('Krang', saltRounds),
-          hourly_wage: 300
+          hash: hashSync('Krang', saltRounds)
         }
       ]);
     });

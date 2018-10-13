@@ -4,30 +4,39 @@ import { connect } from "react-redux";
 import Navbar from './Navbar'
 import Login from "./Login";
 import Register from "./Register";
-import Meeting from "./Meeting";
+import Package from "./Package";
 import History from "./History";
 import Help from "./Help";
 import Sports from './Sports'
+import Home from './Home'
+import Contact from './Contact'
+import Work from './Work'
+import Casual from './Casual'
 
 const App = ({ auth }) => (
   <Router>
     <div id='app'>
-      <div id="App_video">
+      {/* <div id="App_video">
           <video id="bgvid" playsInline autoPlay muted loop>
             <source src="./video.mp4" type="video/mp4" />
           </video>
-      </div>
+      </div> */}
       <Route path='/' component={Navbar} />
 
 
-      <div className="">
+      <div className="App_main">
         {/* {!auth.isAuthenticated && <Route exact path="/" component={Login} />} */}
+        <Route exact path='/' component={Home} />
+        <Route path='/home' component={Home} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Register} />
-        <Route path="/meeting" component={Meeting} />
+        <Route exact path='/Package' component={Package} />
         <Route path="/history" component={History} />
         <Route path="/about" component={Help} />
+        <Route path="/contact" component={Contact} />
         <Route path="/package/sports" component={Sports} />
+        <Route path="/package/work" component={Work} />
+        <Route path="/package/casual" component={Casual} />
       </div>
     </div>
   </Router>

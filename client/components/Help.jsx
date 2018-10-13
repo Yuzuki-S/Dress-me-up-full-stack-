@@ -1,28 +1,46 @@
-import React from "react";
+import React from 'react'
+import {ButtonToolbar, Button} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
+function About () {
+  return (
+    <div className='box'>
+          <h1>Do you wish you had your own fashion stylist? </h1>
 
-class Help extends React.Component {
-  render() {
-    return (
-      <div id="Help_content" className="content">
-        <h1 id="Help_head" className="title is-2">
-          About
-        </h1>
-        <hr />
-
-        <p id="Help_body">
-          Meetings are expensive, but sometimes we forget how expensive they are
-          and feel the need to talk for too long about topics that are
-          unimportant for the meeting purpose. This is an app to display the
-          costs of meetings, and track the costs of your meetings over time. The
-          idea of the App is to be able to display the real-time cost of a
-          meeting as it occurs. This cost is calculated based on the hourly
-          wages of the meeting's attendees and the current duration of the
-          meeting. The intended effect of this App is to make meeting attendees
-          aware of how much this time is costing the business.
+        <p>
+            Select your preferred package and receive a box of personally selected clothing periodically to keep your wardrobe fresh. 
         </p>
+        <h2>1. YOU CHOOSE </h2>
+        <p>
+          There are a range of different packages to choose from. Designed for different occasions.
+        </p>
+        <h2>2. WE CREATE </h2>
+        <p>
+          Get professional stylists to choose what suits you based on your preferences.
+        </p>
+        <p>
+          We will give you a selection to choose from.
+        </p>
+        <h2>3. YOU DECIDE</h2>
+        <p>
+          Choose how often you want a new package, to keep your wardrobe fresh!
+        </p>
+        <h2>4. WE DELIVER </h2>
+        <p>
+          Receive your package directly to a location of your choice. 
+        </p>
+        <h2>5. YOU WEAR AND LOOK GREAT </h2>
+        <p> Dress up and you are ready to go show off your new outfit! </p>
+        <div id="buttonsMain">
+        <ButtonToolbar>
+          <Link id = "list" to = "/Package">
+            <Button id= "button2" bsStyle="primary" bsSize="large" >
+              Order now
+            </Button>
+          </Link>
+        </ButtonToolbar>
       </div>
-    );
-  }
+    </div>
+  )
 }
 
-export default Help;
+export default About

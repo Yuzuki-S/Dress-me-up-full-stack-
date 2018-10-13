@@ -36,7 +36,6 @@ handleClick(e) {
 
 render () {
   return (
-    <div>
       <div className='box'>
         <h1>Sporty Package</h1>
         <Box src1 = "/puffer.jpg" id1 = "puffer" src2= "/hoodie.jpg" id2="hoodie" src3="/peach.jpg" id3="peach"/>
@@ -50,7 +49,6 @@ render () {
           <button id ="save">View</button>
         </Link>
       </div>
-    </div>
   )
 }
 }

@@ -1,3 +1,11 @@
+html {
+  background-color: rgba(0, 0, 0, 0.877);
+  overflow: hidden;
+}
+
+#app {
+  background: black;
+}
 /* App Styles */
 /* *********** */
 #App_firstcontainer {
@@ -70,7 +78,7 @@
 
 #bgvid {
   position: fixed;
-  min-width: 100%;
+  width: 100%;
   height: 100%;
   opacity: 0.8;
   z-index: -1;
@@ -86,11 +94,48 @@
   padding: 0;
 }
 
+.App_main {
+  height: 100%;
+}
 /* Nav styles */
 /* *********** */
 
 .navbar-menu #Nav_help {
   float: left;
+}
+
+nav.navbar.navbar-inverse {
+  margin: 0%;
+}
+/* Home styles */
+/* *********** */
+
+#home_page {
+  background-color:transparent;
+}
+
+#Home_main {
+position: absolute;
+top: 70%;
+padding-left: 10%;
+width: 100%;
+height: 40%;
+}
+
+.cover-heading {
+  font-family: 'Permanent Marker', cursive;
+  font-style: italic;
+  color: aliceblue;
+  text-shadow: 2px 2px 5px black;
+  margin: 0% 1%;
+}
+
+#Home_button {
+  margin: 1%;
+}
+
+#Home_button2 {
+  margin: 1%;
 }
 
 /* Help styles */
@@ -117,4 +162,37 @@
 
 #Login_btn {
   background-color: #2ec4b6;
+}
+
+
+/* Sports/Casual/Work styles */
+/* *********** */
+
+.box {
+    font-size: 1.3em;
+  background-color: rgba(147, 176, 201, 0.8);
+  padding-left: 20px;
+  padding-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  max-width: 80%;
+  max-height: 80%;
+  padding-right: 20px;
+  font-family: 'Permanent Marker', cursive;
+  min-height: 800px;
+  margin: auto auto 7% auto ;
+}
+#carousel {
+  max-width: 300px;
+  display: flex;
+  float: left;
+  margin-left: 30px;
+  padding-top: 30px;
+  
+}
+.carousel.slide {
+  max-width: 72%;
+}
+.carousel-inner {
+  max-width: 100%;
 }

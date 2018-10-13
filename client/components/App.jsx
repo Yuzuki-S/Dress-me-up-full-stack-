@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter as Router, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
-
+import Navbar from './Navbar'
 import Login from "./Login";
 import Register from "./Register";
 import Nav from "./Nav";
@@ -19,7 +19,7 @@ const App = ({ auth }) => (
           </video>
         </div>
       </section>
-
+   <Navbar/>
       <div id="App_Hero" className="hero is-small is-primary">
         <div className="hero-body has-text-centered">
           <Link to="/" className="">
@@ -28,6 +28,7 @@ const App = ({ auth }) => (
             </h1>
           </Link>
           <Nav />
+       
         </div>
       </div>
 

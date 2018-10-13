@@ -11,7 +11,7 @@ import Help from "./Help";
 
 const App = ({ auth }) => (
   <Router>
-    <div id="App_firstcontainer" className="container has-text-centered">
+    <div id='app'>
       <section id="App_video" class="hero is-fullheight video">
         <div class="hero-video">
           <video id="bgvid" playsInline autoPlay muted loop>
@@ -19,7 +19,7 @@ const App = ({ auth }) => (
           </video>
         </div>
       </section>
-   <Navbar/>
+      <Route path='/' component={Navbar} />
       <div id="App_Hero" className="hero is-small is-primary">
         <div className="hero-body has-text-centered">
           <Link to="/" className="">
@@ -33,12 +33,12 @@ const App = ({ auth }) => (
       </div>
 
       <div className="">
-        {!auth.isAuthenticated && <Route exact path="/" component={Login} />}
+        {/* {!auth.isAuthenticated && <Route exact path="/" component={Login} />} */}
         <Route path="/login" component={Login} />
-        <Route path="/register" component={Register} />
+        <Route path="/signup" component={Register} />
         <Route path="/meeting" component={Meeting} />
         <Route path="/history" component={History} />
-        <Route path="/help" component={Help} />
+        <Route path="/about" component={Help} />
       </div>
     </div>
   </Router>

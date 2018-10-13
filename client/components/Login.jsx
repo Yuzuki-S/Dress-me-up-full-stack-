@@ -6,7 +6,7 @@ class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user_name: "",
+      email: "",
       password: ""
     };
     this.updateDetails = this.updateDetails.bind(this);
@@ -20,8 +20,8 @@ class Login extends React.Component {
   }
   submit(e) {
     e.preventDefault();
-    let { user_name, password } = this.state;
-    this.props.dispatch(loginUser({ user_name, password }));
+    let { email, password } = this.state;
+    this.props.dispatch(loginUser({ email, password }));
   }
   render() {
     const { auth } = this.props;
@@ -33,13 +33,13 @@ class Login extends React.Component {
           <span className="has-text-danger is-large">{auth.errorMessage}</span>
         )}
         <label className="label is-large has-text-centered">
-          Username
+          Email
           <input
             required
             className="input has-text-centered is-large is-fullwidth"
-            placeholder="User Name"
+            placeholder="Email"
             type="text"
-            name="user_name"
+            name="email"
             onChange={this.updateDetails}
           />
         </label>

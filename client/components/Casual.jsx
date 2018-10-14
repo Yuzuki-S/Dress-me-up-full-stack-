@@ -1,8 +1,8 @@
 import React from 'react'
-
+import {connect} from 'react-redux'
 import Box from './Box'
 import {Link} from 'react-router-dom'
-
+import {addItems, getId} from '../actions/carts'
 
 let savedItems = [];
 
@@ -18,7 +18,7 @@ class Casual extends React.Component {
  }
 
  handleClick(e) {
-  console.log("ADDING")
+  
   let items = []
   let elementArr = document.getElementsByClassName('active')
 
@@ -34,6 +34,7 @@ class Casual extends React.Component {
   this.setState({
     savedValues: savedItems
   })
+  this.props.addItems(this.props.state.auth.user.id, savedItems)
 }
 
  render () {
@@ -58,4 +59,14 @@ class Casual extends React.Component {
 }
 
 
-export default Casual
+function mapDispatchToProps(dispatch) {
+  return {
+    addItems:(id,items)=> {dispatch(addItems(id,items))
+  },
+    getId: id => {
+      dispatch(getId(id))
+    }
+}
+
+
+export default connect (null, mapDispatchToProps)(Casual)

@@ -34,7 +34,7 @@ class Casual extends React.Component {
   this.setState({
     savedValues: savedItems
   })
-  this.props.addItems(this.props.state.auth.user.id, savedItems)
+  this.props.addItems( savedItems)
 }
 
  render () {
@@ -62,11 +62,8 @@ class Casual extends React.Component {
 function mapDispatchToProps(dispatch) {
   return {
     addItems:(id,items)=> {dispatch(addItems(id,items))
-  },
-    getId: id => {
-      dispatch(getId(id))
     }
+  }
 }
-
 
 export default connect (null, mapDispatchToProps)(Casual)

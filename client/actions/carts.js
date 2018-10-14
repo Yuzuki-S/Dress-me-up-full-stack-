@@ -31,3 +31,8 @@ export function addItems(id, items){
             console.log("I am at action: " + res))
     }
 }
+
+// export function getId(id){
+//     let obj = {id:id}
+//     console.log("action: ", obj)
+// }

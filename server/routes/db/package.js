@@ -4,17 +4,17 @@ const db = require('knex')(config)
 
 function addPackage(email, items) {
     console.log(items)
-//     let stringifiedItems = JSON.stringify(items)
-//     return db('users')
+   let stringifiedItems = JSON.stringify(items)
+//    return db('users')
 //     .where('email', email)
-//    return db('orders')
-//    .insert({items: stringifiedItems})
-//    .then(data => {
-//        console.log("db: ", data)
+    return db('orders')
+    .insert({items: stringifiedItems})
+    .then(data => {
+       return data
 //        return db('users')
 //        .select()
 //         .where({'id': data})        
-//    })
+    })
 }
 
 

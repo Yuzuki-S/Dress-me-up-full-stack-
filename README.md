@@ -26,6 +26,6 @@ This will help users to save time shopping and also keep their wardrobe up to da
 ## Stretch
 
   * [ ] 1. As a user, I want to be able to log in and save my details so that fashion advice is based on what I have chosen.
-  * [ ] 2. As a user, I want to sign in to start.
+  * [x] 2. As a user, I want to sign in to start.
   * [ ] 3. As a user, I want to set the period and receive notifications to check my package.
   * [ ] 4. As a user, I want to be able to scan my body and my body size will be entered into my data so that the company can chose what size I should be ordering. (DREAM)

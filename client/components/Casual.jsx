@@ -11,7 +11,8 @@ class Casual extends React.Component {
   super(props)
   this.state = {
     isHidden: false,
-    savedValues: []
+    savedValues: [],
+    view:false
   }
 
   this.handleClick = this.handleClick.bind(this);
@@ -32,9 +33,10 @@ class Casual extends React.Component {
   }
   savedItems = items;
   this.setState({
-    savedValues: savedItems
+    savedValues: savedItems,
+    view:true
   })
-  this.props.addItems( savedItems)
+  this.props.addItems(savedItems)
 }
 
  render () {
@@ -46,18 +48,22 @@ class Casual extends React.Component {
         <Box src1 = "/noir.jpg" id1 = "noir" src2= "/black.jpg" id2="black" src3="/woven.jpg" id3="woven"/> 
         <Box src1 = "/jeans.jpg" id1 = "jeans" src2= "/drawcord.jpg" id2="drawcord" src3="/white.jpg" id3="white"/>   
         <Box src1 = "/anya.jpg" id1 = "anya" src2= "/jusmin.jpg" id2="jusmin" src3="/malia.jpg" id3="malia"/>
-        <div>
-        <button id ="add" onClick={this.handleClick}>+Add</button>
-        </div>
-        <Link to={{pathname: '/Package/casual/saved', state: {savedValues: savedItems}}}>
+        {!this.state.view ? 
+          (<div>
+              <button id ="add" onClick={this.handleClick}>+Add</button>
+          </div>):(this.state.view && this.props.auth.isAuthenticated ? (<Link to={{pathname: '/Package/casual/saved', state: {savedValues: savedItems}}}>
           <button id ="save">View</button>
-        </Link>
+        </Link>) :(<Link to = {'/signup'}><button id ="signup">Sign up</button></Link>))} 
       </div>
     </div>
 )
 }
 }
 
+
+function mapStateToProps(state){
+  return state
+}
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -66,4 +72,4 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect (null, mapDispatchToProps)(Casual)
+export default connect (mapStateToProps, mapDispatchToProps)(Casual)

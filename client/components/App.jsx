@@ -12,6 +12,7 @@ import Home from './Home'
 import Contact from './Contact'
 import Work from './Work'
 import Casual from './Casual'
+import ContactReceived from './ContactReceived'
 
 const App = ({ auth }) => (
   <Router>
@@ -33,10 +34,11 @@ const App = ({ auth }) => (
         <Route exact path='/Package' component={Package} />
         <Route path="/history" component={History} />
         <Route path="/about" component={Help} />
-        <Route path="/contact" component={Contact} />
+        <Route exact path="/contact" component={Contact} />
         <Route path="/package/sports" component={Sports} />
         <Route path="/package/work" component={Work} />
         <Route path="/package/casual" component={Casual} />
+        <Route path="/contact/confirmed" component={ContactReceived}/>
       </div>
     </div>
   </Router>

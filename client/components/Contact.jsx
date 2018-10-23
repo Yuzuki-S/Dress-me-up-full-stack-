@@ -10,13 +10,13 @@ class Contact extends React.Component {
     return (
       <div className='box'>
         <h1 id="contact_text">Contact us</h1>
-        <form>
+        <form id="contact-form">
           <FormGroup  id="contact" controlId="formHorizontalName">
-            <Col componentClass={ControlLabel} sm={2} id="contact_text">
+            <Col componentClass={ControlLabel} sm={2} id="contact_text" >
               Name
             </Col>
             <Col sm={10}>
-              <FormControl type="name" placeholder="Your name" />
+              <FormControl type="name" placeholder="Your name" name="user_name"/>
             </Col>
           </FormGroup>
           
@@ -25,7 +25,7 @@ class Contact extends React.Component {
               Email
             </Col>
             <Col sm={10}>
-              <FormControl type="email" placeholder="Email address" />
+              <FormControl type="email" placeholder="Email address" name="user_email" />
             </Col>
           </FormGroup>
 
@@ -34,11 +34,11 @@ class Contact extends React.Component {
               Message
             </Col>
             <Col sm={10}>
-              <FormControl componentClass="textarea" placeholder="message" />
+              <FormControl componentClass="textarea" placeholder="message" name="contact"/>
             </Col>
           </FormGroup>
 
-          <Link to= '/Contact/confirmed'><Button id= "contactSubmit" type="submit">Submit</Button></Link>
+          <Link to= '/Contact/confirmed'><Button id= "contactSubmit" type="submit" value="submit">Submit</Button></Link>
         </form>
       </div>
     )

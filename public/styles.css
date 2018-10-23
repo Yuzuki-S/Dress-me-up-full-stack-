@@ -223,3 +223,10 @@ height: 40%;
 #contact_text{
   color: aliceblue;
 }
+
+/*ContactReceived component*/
+
+#contactreceived{
+  margin: 20% 5%;
+  color: aliceblue;
+}

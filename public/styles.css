@@ -147,6 +147,10 @@ height: 40%;
   padding: 5px;
 }
 
+#help_text{
+  color: aliceblue;
+  overflow: auto;
+}
 #Help_head {
   margin-top: 2%;
   font-weight: 600;
@@ -217,10 +221,11 @@ height: 40%;
 }
 
 .col-sm-2.control-label{
-  margin: 2% 0%;
+  margin: 0%;
 }
 
 #contact_text{
+  margin: 0%;
   color: aliceblue;
 }
 

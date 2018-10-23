@@ -3,7 +3,7 @@ import {ButtonToolbar, Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 function About () {
   return (
-    <div className='box'>
+    <div className='box' id="help_text">
           <h1>Do you wish you had your own fashion stylist? </h1>
 
         <p>

@@ -5,6 +5,15 @@ import {Link} from 'react-router-dom'
 class Contact extends React.Component {
  constructor(props){
   super(props)
+  this.handleClick=this.handleClick.bind(this)
+  }
+
+
+  handleClick(){
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      emailjs.sendForm('gmail', 'template_7ER3alBR', this);
+    });
   }
   render() {
     return (
@@ -38,7 +47,7 @@ class Contact extends React.Component {
             </Col>
           </FormGroup>
 
-          <Link to= '/Contact/confirmed'><Button id= "contactSubmit" type="submit" value="submit">Submit</Button></Link>
+          <Link to ="/contact/confirmed"><Button onClick={this.handleClick} id= "contactSubmit"type="submit" value="submit">Submit</Button></Link>
         </form>
       </div>
     )

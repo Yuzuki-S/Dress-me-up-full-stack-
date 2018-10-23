@@ -9,19 +9,19 @@ class Contact extends React.Component {
   render() {
     return (
       <div className='box'>
-        <h1>Contact us</h1>
+        <h1 id="contact_text">Contact us</h1>
         <form>
           <FormGroup  id="contact" controlId="formHorizontalName">
-            <Col componentClass={ControlLabel} sm={2}>
+            <Col componentClass={ControlLabel} sm={2} id="contact_text">
               Name
             </Col>
             <Col sm={10}>
               <FormControl type="name" placeholder="Your name" />
             </Col>
           </FormGroup>
-
+          
           <FormGroup controlId="formHorizontalEmail">
-            <Col componentClass={ControlLabel} sm={2}>
+            <Col componentClass={ControlLabel} sm={2} id="contact_text">
               Email
             </Col>
             <Col sm={10}>
@@ -30,7 +30,7 @@ class Contact extends React.Component {
           </FormGroup>
 
           <FormGroup controlId="formControlsTextarea">
-            <Col componentClass={ControlLabel} sm={2}>
+            <Col componentClass={ControlLabel} sm={2} id="contact_text" >
               Message
             </Col>
             <Col sm={10}>

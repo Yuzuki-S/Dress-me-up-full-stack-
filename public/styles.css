@@ -204,3 +204,22 @@ height: 40%;
   margin: 3%;
 }
 
+#formHorizontalName {
+  margin: 2% 0%;
+}
+
+#formHorizontalEmail{
+  margin: 2% 0%;
+}
+
+#formControlsTextarea{
+  margin: 2% 0%;
+}
+
+.col-sm-2.control-label{
+  margin: 2% 0%;
+}
+
+#contact_text{
+  color: aliceblue;
+}

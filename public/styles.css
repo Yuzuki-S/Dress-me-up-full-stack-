@@ -196,3 +196,11 @@ height: 40%;
 .carousel-inner {
   max-width: 100%;
 }
+
+/*Contact component */
+
+#contactSubmit{
+  float: right;
+  margin: 3%;
+}
+

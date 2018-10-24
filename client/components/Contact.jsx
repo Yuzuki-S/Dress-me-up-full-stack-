@@ -18,14 +18,13 @@ class Contact extends React.Component {
   // }
 
   handleSubmit(){
-    this.setState({
-      thankyou:true
-    })
-    
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault(); 
       emailjs.sendForm('gmail', 'testing', this);
     });
+    // this.setState({
+    //   thankyou:true
+    // })
   }
 
   render() {

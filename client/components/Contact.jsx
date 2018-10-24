@@ -1,23 +1,38 @@
 import React from 'react'
 import {FieldGroup, Button,FormGroup, ControlLabel, FormControl, Col}  from 'react-bootstrap'
-import {Link} from 'react-router-dom'
+import ContactReceived from './ContactReceived'
+
 
 class Contact extends React.Component {
  constructor(props){
   super(props)
-  this.handleClick=this.handleClick.bind(this)
+  this.state={
+    thankyou:false
+  }
+ 
+  this.handleSubmit=this.handleSubmit.bind(this)
   }
 
+  // handleChange(e){
+  //   console.log(e.target.value)
+  // }
 
-  handleClick(){
+  handleSubmit(){
+    this.setState({
+      thankyou:true
+    })
+    
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault(); 
-      emailjs.sendForm('gmail', 'template_7ER3alBR', this);
+      emailjs.sendForm('gmail', 'testing', this);
     });
   }
+
   render() {
     return (
       <div className='box'>
+      {this.state.thankyou ? <ContactReceived/> :
+      <div>
         <h1 id="contact_text">Contact us</h1>
         <form id="contact-form">
           <FormGroup  id="contact" controlId="formHorizontalName">
@@ -25,7 +40,7 @@ class Contact extends React.Component {
               Name
             </Col>
             <Col sm={10}>
-              <FormControl type="name" placeholder="Your name" name="user_name"/>
+              <FormControl type="name" placeholder="Your name" name="name"/>
             </Col>
           </FormGroup>
           
@@ -34,7 +49,7 @@ class Contact extends React.Component {
               Email
             </Col>
             <Col sm={10}>
-              <FormControl type="email" placeholder="Email address" name="user_email" />
+              <FormControl type="email" placeholder="Email address" name="email" onChange={this.handleChange}/>
             </Col>
           </FormGroup>
 
@@ -43,12 +58,13 @@ class Contact extends React.Component {
               Message
             </Col>
             <Col sm={10}>
-              <FormControl componentClass="textarea" placeholder="message" name="contact"/>
+              <FormControl componentClass="textarea" placeholder="message" name="message"/>
             </Col>
           </FormGroup>
 
-          <Link to ="/contact/confirmed"><Button onClick={this.handleClick} id= "contactSubmit"type="submit" value="submit">Submit</Button></Link>
+         <Button onClick={this.handleSubmit} id= "contactSubmit" type="submit" value="submit">Submit</Button>
         </form>
+        </div>}
       </div>
     )
   }
